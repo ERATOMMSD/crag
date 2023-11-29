@@ -1,0 +1,5 @@
+The file controller.py is from CARLA simulator's PythonAPI with MIT License (see LICENSE_CVC.MIT).
+
+The files agents/utils/misc.py, carla.py, carlapidonbicycle.py, util.py, vehicle.py are from the freneticlib module (https://github.com/ERATOMMSD/frenetic-lib) (see LICENSE_FRENETICLIB.GPL)
+
+The executable files pict-linux, pict-mac, and pict-windows.exe are from PICT (Pairwise Independent Combinatorial Testing, https://github.com/microsoft/pict) (see LICENSE_PICT.MIT)
