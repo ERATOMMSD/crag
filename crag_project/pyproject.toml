@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "crag"
-version = "0.1.0"
+version = "1.0"
 description = "Combinatorial-Testing-Based Road Generator"
 authors = ["Paolo Arcaini <arcaini@nii.ac.jp>", "Ahmet Cetinkaya <ahmet@shibaura-it.ac.jp>"]
 
