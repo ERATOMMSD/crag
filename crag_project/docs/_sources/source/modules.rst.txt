@@ -1,7 +1,0 @@
-crag
-====
-
-.. toctree::
-   :maxdepth: 4
-
-   crag
