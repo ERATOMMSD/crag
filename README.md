@@ -117,7 +117,7 @@ python example_as_a_standalone.py
 
 ### Arguments for standalone use
 
-The standalone executable `crag` accepts several command line arguments to customize the modes of operation. We provide the full list below:
+The standalone executable `crag` accepts several command line arguments for customization. We provide the full list below:
 
 
 #### CORE PARAMETER arguments
