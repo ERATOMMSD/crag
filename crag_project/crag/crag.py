@@ -1,3 +1,7 @@
+"""
+This module provides the main class for CRAG.
+"""
+
 import math
 from . import roadgeometry as rg
 from . import utils
@@ -62,7 +66,11 @@ class CRAG:
 
         self.fitness_dictionary = {}
 
-    def generate_roads(self, test_suite):
+    def search_roads(self, test_suite):
+        """Given a test suite, this method provides concrete road geometries
+        by random sampling. It can be extended to allow different search strategies
+        (e.g. evolutionary approaches)."""
+
         roads = []
         for test in test_suite:
             lengths_indices = test[:self.road_section_count]
@@ -99,12 +107,16 @@ class CRAG:
         return test_suite
 
     def generate(self):
+        """This method generates roads while there is available budget by using
+        CRAG algorithm. It returns all generated roads and their evaluation scores
+        when budget is no longer available."""
+
         all_roads_and_evaluations = []
         evaluation_dict = {}
         while True:
             strength = 2
             test_suite = self.test_suite_generator.generate_test_suite(strength)
-            roads = self.generate_roads(test_suite)
+            roads = self.search_roads(test_suite)
             # Evaluate
             evaluations = []
             budget_over = False
@@ -125,7 +137,7 @@ class CRAG:
                     test_suite = self.filter(test_suite, strength, seed_test_suite)
                 else:
                     test_suite = self.test_suite_generator.generate_test_suite(strength)
-                roads = self.generate_roads(test_suite)
+                roads = self.search_roads(test_suite)
                 # Evaluate
                 evaluations = []
                 for (test, road) in zip(test_suite, roads):

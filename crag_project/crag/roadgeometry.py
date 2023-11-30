@@ -1,3 +1,8 @@
+""" This model provides functions the allow generating Cartesian coordinates
+from road geometry identified via length and kappa (curvature) values in Frenet
+frame representation. The functions also provide ways of checking if generated roads
+can fit into given map sizes and fitting them if they can."""
+
 import math
 import random as ra
 from shapely import geometry
@@ -5,7 +10,7 @@ from . import utils
 
 
 def frenet_to_cartesian_road_points_with_reframability_check(x0, y0, theta0, ds, kappas, lane_width, map_size):
-    """Convert a set of curvatures into a set of points in Cartesian
+    """Converts a set of curvatures into a set of points in Cartesian
     coordinates representing the center line of a road.
     Together with the road points extra information about its
     reframability is returned. A road is called reframable if its coordinates

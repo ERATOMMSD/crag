@@ -17,11 +17,14 @@ def has_m_match(array, other_arrays, m):
 
 
 def get_fullpath(filename):
+    """Given a filename with a local path, this method returns
+    the global filepath of the file."""
     dirname = os.path.dirname(__file__)
     return os.path.join(dirname, filename)
 
 
 def call_command(command):
+    """Calls a given shell command and returns the output string."""
     return subprocess.getoutput(command).strip()
 
 
@@ -44,18 +47,8 @@ def divide_and_sample(min_value, max_value, n, i):
 
 
 def update_average(average_dict, key_list, new_value):
-    key_tuple = tuple(key_list)
-    if key_tuple in average_dict:
-        old_average, n = average_dict[key_tuple]
-        new_average = (old_average * n + new_value) / (n + 1)
-        average_dict[key_tuple] = (new_average, n + 1)
-        return new_average
-    else:
-        average_dict[key_tuple] = (new_value, 1)
-        return new_value
-
-
-def update_average(average_dict, key_list, new_value):
+    """This method provides a mechanism to aggregate fitness values
+    (by averaging) for multiple roads generated with the same configuration."""
     key_tuple = tuple(key_list)
     if key_tuple in average_dict:
         old_average, n = average_dict[key_tuple]
@@ -68,6 +61,8 @@ def update_average(average_dict, key_list, new_value):
 
 
 def update_minimum(minimum_dict, key_list, new_value):
+    """This method provides a mechanism to aggregate fitness values
+    (by taking minimum) for multiple roads generated with the same configuration."""
     key_tuple = tuple(key_list)
     if key_tuple in minimum_dict:
         old_minimum, n = minimum_dict[key_tuple]
@@ -80,6 +75,9 @@ def update_minimum(minimum_dict, key_list, new_value):
 
 
 def update_first(first_dict, key_list, new_value):
+    """This method provides a mechanism to aggregate fitness values
+    (by locking in the first value) for multiple roads generated with the same
+    configuration."""
     key_tuple = tuple(key_list)
     if key_tuple in first_dict:
         return first_dict[key_tuple][0]
@@ -89,5 +87,9 @@ def update_first(first_dict, key_list, new_value):
 
 
 def take_best(lst, fun, best_size):
+    """Given a list of numeric values lst, a function fun, and a size
+    constant best_size, this function sorts the list of values lst based
+    on the value that they generate when they are passed to the function fun.
+    Then the top best_size of the sorted list is returned."""
     size = len(lst)
     return [lst[j] for j in sorted(list(range(size)), key=fun)[:best_size]]

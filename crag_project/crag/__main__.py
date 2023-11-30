@@ -1,3 +1,5 @@
+"""This is the main entry point of the CRAG standalone executable."""
+
 from . import roadgeometry as rg
 from . import crag
 import argparse
