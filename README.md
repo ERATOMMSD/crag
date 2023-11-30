@@ -251,3 +251,6 @@ To start generating road geometries, we use the `generate` method.
 self.crag.generate()
 ~~~
 
+## API Documentation
+
+We provide an API documentation to help those who want to use CRAG as a library. The documentation can be found in html format in the `docs` folder.
