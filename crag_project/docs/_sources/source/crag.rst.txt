@@ -1,0 +1,71 @@
+crag package
+============
+
+Below is a list of all submodules of CRAG. For the main class of CRAG, check crag.crag; for handling test suite generator backends, check crag.tsgenerator, crag.acts, crag.cagen, and crag.pict; for generation of concrete roads from road configurations check crag.roadgeometry.
+
+Submodules
+----------
+
+crag.acts module
+----------------
+
+.. automodule:: crag.acts
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+crag.cagen module
+-----------------
+
+.. automodule:: crag.cagen
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+crag.crag module
+----------------
+
+.. automodule:: crag.crag
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+crag.pict module
+----------------
+
+.. automodule:: crag.pict
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+crag.roadgeometry module
+------------------------
+
+.. automodule:: crag.roadgeometry
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+crag.tsgenerator module
+-----------------------
+
+.. automodule:: crag.tsgenerator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+crag.utils module
+-----------------
+
+.. automodule:: crag.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: crag
+   :members:
+   :undoc-members:
+   :show-inheritance:

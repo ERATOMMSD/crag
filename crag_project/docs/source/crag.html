@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>crag package &mdash; CRAG  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CRAG
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">crag package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-crag.acts">crag.acts module</a><ul>
+<li><a class="reference internal" href="#crag.acts.ACTSTestSuiteGenerator"><code class="docutils literal notranslate"><span class="pre">ACTSTestSuiteGenerator</span></code></a><ul>
+<li><a class="reference internal" href="#crag.acts.ACTSTestSuiteGenerator.call"><code class="docutils literal notranslate"><span class="pre">ACTSTestSuiteGenerator.call()</span></code></a></li>
+<li><a class="reference internal" href="#crag.acts.ACTSTestSuiteGenerator.call_with_seed"><code class="docutils literal notranslate"><span class="pre">ACTSTestSuiteGenerator.call_with_seed()</span></code></a></li>
+<li><a class="reference internal" href="#crag.acts.ACTSTestSuiteGenerator.create_input_file"><code class="docutils literal notranslate"><span class="pre">ACTSTestSuiteGenerator.create_input_file()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#crag.acts.parse_acts_command_result"><code class="docutils literal notranslate"><span class="pre">parse_acts_command_result()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-crag.cagen">crag.cagen module</a><ul>
+<li><a class="reference internal" href="#crag.cagen.CAgenTestSuiteGenerator"><code class="docutils literal notranslate"><span class="pre">CAgenTestSuiteGenerator</span></code></a><ul>
+<li><a class="reference internal" href="#crag.cagen.CAgenTestSuiteGenerator.call"><code class="docutils literal notranslate"><span class="pre">CAgenTestSuiteGenerator.call()</span></code></a></li>
+<li><a class="reference internal" href="#crag.cagen.CAgenTestSuiteGenerator.call_with_seed"><code class="docutils literal notranslate"><span class="pre">CAgenTestSuiteGenerator.call_with_seed()</span></code></a></li>
+<li><a class="reference internal" href="#crag.cagen.CAgenTestSuiteGenerator.create_input_file"><code class="docutils literal notranslate"><span class="pre">CAgenTestSuiteGenerator.create_input_file()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#crag.cagen.index_str_to_int"><code class="docutils literal notranslate"><span class="pre">index_str_to_int()</span></code></a></li>
+<li><a class="reference internal" href="#crag.cagen.parse_cagen_command_result"><code class="docutils literal notranslate"><span class="pre">parse_cagen_command_result()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-crag.crag">crag.crag module</a><ul>
+<li><a class="reference internal" href="#crag.crag.CRAG"><code class="docutils literal notranslate"><span class="pre">CRAG</span></code></a><ul>
+<li><a class="reference internal" href="#crag.crag.CRAG.best_tuples"><code class="docutils literal notranslate"><span class="pre">CRAG.best_tuples()</span></code></a></li>
+<li><a class="reference internal" href="#crag.crag.CRAG.filter"><code class="docutils literal notranslate"><span class="pre">CRAG.filter()</span></code></a></li>
+<li><a class="reference internal" href="#crag.crag.CRAG.generate"><code class="docutils literal notranslate"><span class="pre">CRAG.generate()</span></code></a></li>
+<li><a class="reference internal" href="#crag.crag.CRAG.search_roads"><code class="docutils literal notranslate"><span class="pre">CRAG.search_roads()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-crag.pict">crag.pict module</a><ul>
+<li><a class="reference internal" href="#crag.pict.PictTestSuiteGenerator"><code class="docutils literal notranslate"><span class="pre">PictTestSuiteGenerator</span></code></a><ul>
+<li><a class="reference internal" href="#crag.pict.PictTestSuiteGenerator.call"><code class="docutils literal notranslate"><span class="pre">PictTestSuiteGenerator.call()</span></code></a></li>
+<li><a class="reference internal" href="#crag.pict.PictTestSuiteGenerator.call_with_seed"><code class="docutils literal notranslate"><span class="pre">PictTestSuiteGenerator.call_with_seed()</span></code></a></li>
+<li><a class="reference internal" href="#crag.pict.PictTestSuiteGenerator.create_model"><code class="docutils literal notranslate"><span class="pre">PictTestSuiteGenerator.create_model()</span></code></a></li>
+<li><a class="reference internal" href="#crag.pict.PictTestSuiteGenerator.set_model"><code class="docutils literal notranslate"><span class="pre">PictTestSuiteGenerator.set_model()</span></code></a></li>
+<li><a class="reference internal" href="#crag.pict.PictTestSuiteGenerator.write_to_seed_file"><code class="docutils literal notranslate"><span class="pre">PictTestSuiteGenerator.write_to_seed_file()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#crag.pict.parse_pict_command_result"><code class="docutils literal notranslate"><span class="pre">parse_pict_command_result()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-crag.roadgeometry">crag.roadgeometry module</a><ul>
+<li><a class="reference internal" href="#crag.roadgeometry.frenet_to_cartesian_road_points_with_reframability_check"><code class="docutils literal notranslate"><span class="pre">frenet_to_cartesian_road_points_with_reframability_check()</span></code></a></li>
+<li><a class="reference internal" href="#crag.roadgeometry.generate_road_with_reframability_check"><code class="docutils literal notranslate"><span class="pre">generate_road_with_reframability_check()</span></code></a></li>
+<li><a class="reference internal" href="#crag.roadgeometry.is_likely_self_intersecting"><code class="docutils literal notranslate"><span class="pre">is_likely_self_intersecting()</span></code></a></li>
+<li><a class="reference internal" href="#crag.roadgeometry.reframe_road"><code class="docutils literal notranslate"><span class="pre">reframe_road()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-crag.tsgenerator">crag.tsgenerator module</a><ul>
+<li><a class="reference internal" href="#crag.tsgenerator.TestSuiteGenerator"><code class="docutils literal notranslate"><span class="pre">TestSuiteGenerator</span></code></a><ul>
+<li><a class="reference internal" href="#crag.tsgenerator.TestSuiteGenerator.call"><code class="docutils literal notranslate"><span class="pre">TestSuiteGenerator.call()</span></code></a></li>
+<li><a class="reference internal" href="#crag.tsgenerator.TestSuiteGenerator.call_with_seed"><code class="docutils literal notranslate"><span class="pre">TestSuiteGenerator.call_with_seed()</span></code></a></li>
+<li><a class="reference internal" href="#crag.tsgenerator.TestSuiteGenerator.generate_test_suite"><code class="docutils literal notranslate"><span class="pre">TestSuiteGenerator.generate_test_suite()</span></code></a></li>
+<li><a class="reference internal" href="#crag.tsgenerator.TestSuiteGenerator.get_model_string"><code class="docutils literal notranslate"><span class="pre">TestSuiteGenerator.get_model_string()</span></code></a></li>
+<li><a class="reference internal" href="#crag.tsgenerator.TestSuiteGenerator.get_seed_string"><code class="docutils literal notranslate"><span class="pre">TestSuiteGenerator.get_seed_string()</span></code></a></li>
+<li><a class="reference internal" href="#crag.tsgenerator.TestSuiteGenerator.set_model"><code class="docutils literal notranslate"><span class="pre">TestSuiteGenerator.set_model()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-crag.utils">crag.utils module</a><ul>
+<li><a class="reference internal" href="#crag.utils.call_command"><code class="docutils literal notranslate"><span class="pre">call_command()</span></code></a></li>
+<li><a class="reference internal" href="#crag.utils.divide_and_sample"><code class="docutils literal notranslate"><span class="pre">divide_and_sample()</span></code></a></li>
+<li><a class="reference internal" href="#crag.utils.get_fullpath"><code class="docutils literal notranslate"><span class="pre">get_fullpath()</span></code></a></li>
+<li><a class="reference internal" href="#crag.utils.has_m_match"><code class="docutils literal notranslate"><span class="pre">has_m_match()</span></code></a></li>
+<li><a class="reference internal" href="#crag.utils.line_index"><code class="docutils literal notranslate"><span class="pre">line_index()</span></code></a></li>
+<li><a class="reference internal" href="#crag.utils.take_best"><code class="docutils literal notranslate"><span class="pre">take_best()</span></code></a></li>
+<li><a class="reference internal" href="#crag.utils.update_average"><code class="docutils literal notranslate"><span class="pre">update_average()</span></code></a></li>
+<li><a class="reference internal" href="#crag.utils.update_first"><code class="docutils literal notranslate"><span class="pre">update_first()</span></code></a></li>
+<li><a class="reference internal" href="#crag.utils.update_minimum"><code class="docutils literal notranslate"><span class="pre">update_minimum()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-crag">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CRAG</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">crag package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/crag.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="crag-package">
+<h1>crag package<a class="headerlink" href="#crag-package" title="Link to this heading"></a></h1>
+<p>Below is a list of all submodules of CRAG. For the main class of CRAG, check crag.crag; for handling test suite generator backends, check crag.tsgenerator, crag.acts, crag.cagen, and crag.pict; for generation of concrete roads from road configurations check crag.roadgeometry.</p>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-crag.acts">
+<span id="crag-acts-module"></span><h2>crag.acts module<a class="headerlink" href="#module-crag.acts" title="Link to this heading"></a></h2>
+<p>This module provides CAgenTestSuiteGenerator to extend TestSuiteGenerator
+to be able to use CAgen tool as a backend.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="crag.acts.ACTSTestSuiteGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">crag.acts.</span></span><span class="sig-name descname"><span class="pre">ACTSTestSuiteGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">java_executable_filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acts_jar_filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.acts.ACTSTestSuiteGenerator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#crag.tsgenerator.TestSuiteGenerator" title="crag.tsgenerator.TestSuiteGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">TestSuiteGenerator</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.acts.ACTSTestSuiteGenerator.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strength</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.acts.ACTSTestSuiteGenerator.call" title="Link to this definition"></a></dt>
+<dd><p>Calls ACTS with given strength and returns parsed result.
+Notice that the model is described in the input file.
+The result of ACTS is the output file. Since ACTS is distributed
+as a jar file, the call is actually made to the java executable.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.acts.ACTSTestSuiteGenerator.call_with_seed">
+<span class="sig-name descname"><span class="pre">call_with_seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_test_suite</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.acts.ACTSTestSuiteGenerator.call_with_seed" title="Link to this definition"></a></dt>
+<dd><p>Calls ACTS with given strength and seed test suite. Notice
+that the model is described in the input file which includes
+the seed test suite definition. The result of ACTS
+is the output file. Since ACTS is distributed as a jar file,
+the call is actually made to the java executable.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.acts.ACTSTestSuiteGenerator.create_input_file">
+<span class="sig-name descname"><span class="pre">create_input_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_test_suite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.acts.ACTSTestSuiteGenerator.create_input_file" title="Link to this definition"></a></dt>
+<dd><p>This method creates an input file. The model and seeds are passed
+to ACTS via an input file.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.acts.parse_acts_command_result">
+<span class="sig-prename descclassname"><span class="pre">crag.acts.</span></span><span class="sig-name descname"><span class="pre">parse_acts_command_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acts_command_result</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.acts.parse_acts_command_result" title="Link to this definition"></a></dt>
+<dd><p>Parses acts command result string into a list of lists of ints.
+Since the actual result starts after several lines, we first identify
+the starting point.</p>
+</dd></dl>
+
+</section>
+<section id="module-crag.cagen">
+<span id="crag-cagen-module"></span><h2>crag.cagen module<a class="headerlink" href="#module-crag.cagen" title="Link to this heading"></a></h2>
+<p>This module provides CAgenTestSuiteGenerator to extend TestSuiteGenerator
+to be able to use CAgen tool as a backend.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="crag.cagen.CAgenTestSuiteGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">crag.cagen.</span></span><span class="sig-name descname"><span class="pre">CAgenTestSuiteGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cagen_executable_filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.cagen.CAgenTestSuiteGenerator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#crag.tsgenerator.TestSuiteGenerator" title="crag.tsgenerator.TestSuiteGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">TestSuiteGenerator</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.cagen.CAgenTestSuiteGenerator.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strength</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.cagen.CAgenTestSuiteGenerator.call" title="Link to this definition"></a></dt>
+<dd><p>Calls CAgen with given strength. Notice that the model is
+described in the input file. The result of CAgen is the output file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.cagen.CAgenTestSuiteGenerator.call_with_seed">
+<span class="sig-name descname"><span class="pre">call_with_seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_test_suite</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.cagen.CAgenTestSuiteGenerator.call_with_seed" title="Link to this definition"></a></dt>
+<dd><p>Calls CAgen with given strength and seed test suite. Notice
+that the model is described in the input file which includes
+the seed test suite definition. The result of CAgen
+is the output file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.cagen.CAgenTestSuiteGenerator.create_input_file">
+<span class="sig-name descname"><span class="pre">create_input_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_test_suite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.cagen.CAgenTestSuiteGenerator.create_input_file" title="Link to this definition"></a></dt>
+<dd><p>This method creates an input file. The model and seeds are passed
+to CAgen via an input file.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.cagen.index_str_to_int">
+<span class="sig-prename descclassname"><span class="pre">crag.cagen.</span></span><span class="sig-name descname"><span class="pre">index_str_to_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">possible_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.cagen.index_str_to_int" title="Link to this definition"></a></dt>
+<dd><p>Convert string to integer, while also taking account unspecified values.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.cagen.parse_cagen_command_result">
+<span class="sig-prename descclassname"><span class="pre">crag.cagen.</span></span><span class="sig-name descname"><span class="pre">parse_cagen_command_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cagen_command_result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">possible_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.cagen.parse_cagen_command_result" title="Link to this definition"></a></dt>
+<dd><p>Parses cagen command result string into a list of lists of ints.</p>
+</dd></dl>
+
+</section>
+<section id="module-crag.crag">
+<span id="crag-crag-module"></span><h2>crag.crag module<a class="headerlink" href="#module-crag.crag" title="Link to this heading"></a></h2>
+<p>This module provides the main class for CRAG.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="crag.crag.CRAG">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">crag.crag.</span></span><span class="sig-name descname"><span class="pre">CRAG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">core_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_suite_generator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluate_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">budget_availability_function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.crag.CRAG" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Combinatorial testing-based RoAd Generator</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.crag.CRAG.best_tuples">
+<span class="sig-name descname"><span class="pre">best_tuples</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_suite</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.crag.CRAG.best_tuples" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.crag.CRAG.filter">
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_suite</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_test_suite</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.crag.CRAG.filter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.crag.CRAG.generate">
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#crag.crag.CRAG.generate" title="Link to this definition"></a></dt>
+<dd><p>This method generates roads while there is available budget by using
+CRAG algorithm. It returns all generated roads and their evaluation scores
+when budget is no longer available.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.crag.CRAG.search_roads">
+<span class="sig-name descname"><span class="pre">search_roads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_suite</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.crag.CRAG.search_roads" title="Link to this definition"></a></dt>
+<dd><p>Given a test suite, this method provides concrete road geometries
+by random sampling. It can be extended to allow different search strategies
+(e.g. evolutionary approaches).</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-crag.pict">
+<span id="crag-pict-module"></span><h2>crag.pict module<a class="headerlink" href="#module-crag.pict" title="Link to this heading"></a></h2>
+<p>This module provides PICTTestSuiteGenerator to extend TestSuiteGenerator
+to be able to use PICT tool as a backend.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="crag.pict.PictTestSuiteGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">crag.pict.</span></span><span class="sig-name descname"><span class="pre">PictTestSuiteGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pict_executable_filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.pict.PictTestSuiteGenerator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#crag.tsgenerator.TestSuiteGenerator" title="crag.tsgenerator.TestSuiteGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">TestSuiteGenerator</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.pict.PictTestSuiteGenerator.call">
+<span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strength</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.pict.PictTestSuiteGenerator.call" title="Link to this definition"></a></dt>
+<dd><p>Calls PICT with given strength. Notice that the model is
+described in the model file. The result of PICT is read from
+standard output.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.pict.PictTestSuiteGenerator.call_with_seed">
+<span class="sig-name descname"><span class="pre">call_with_seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_test_suite</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.pict.PictTestSuiteGenerator.call_with_seed" title="Link to this definition"></a></dt>
+<dd><p>Calls PICT with given strength and seed test suite.
+Notice that the model is described in the model file and
+seed test suite is described in the seed file.
+The result of PICT is read from standard output.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.pict.PictTestSuiteGenerator.create_model">
+<span class="sig-name descname"><span class="pre">create_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#crag.pict.PictTestSuiteGenerator.create_model" title="Link to this definition"></a></dt>
+<dd><p>Prepares model file required for pict.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.pict.PictTestSuiteGenerator.set_model">
+<span class="sig-name descname"><span class="pre">set_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">road_section_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_value_count</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.pict.PictTestSuiteGenerator.set_model" title="Link to this definition"></a></dt>
+<dd><p>This method initiates model creation, since PICT requires
+a specific model file to be created.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.pict.PictTestSuiteGenerator.write_to_seed_file">
+<span class="sig-name descname"><span class="pre">write_to_seed_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.pict.PictTestSuiteGenerator.write_to_seed_file" title="Link to this definition"></a></dt>
+<dd><p>Writes seed test suite to seed file required for pict.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.pict.parse_pict_command_result">
+<span class="sig-prename descclassname"><span class="pre">crag.pict.</span></span><span class="sig-name descname"><span class="pre">parse_pict_command_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pict_command_result</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.pict.parse_pict_command_result" title="Link to this definition"></a></dt>
+<dd><p>Parses pict command result string into a list of lists of ints.
+The main result of pict starts after several lines. Therefore, this
+method first figures out the start_line.</p>
+</dd></dl>
+
+</section>
+<section id="module-crag.roadgeometry">
+<span id="crag-roadgeometry-module"></span><h2>crag.roadgeometry module<a class="headerlink" href="#module-crag.roadgeometry" title="Link to this heading"></a></h2>
+<p>This model provides functions the allow generating Cartesian coordinates
+from road geometry identified via length and kappa (curvature) values in Frenet
+frame representation. The functions also provide ways of checking if generated roads
+can fit into given map sizes and fitting them if they can.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.roadgeometry.frenet_to_cartesian_road_points_with_reframability_check">
+<span class="sig-prename descclassname"><span class="pre">crag.roadgeometry.</span></span><span class="sig-name descname"><span class="pre">frenet_to_cartesian_road_points_with_reframability_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lane_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.roadgeometry.frenet_to_cartesian_road_points_with_reframability_check" title="Link to this definition"></a></dt>
+<dd><p>Converts a set of curvatures into a set of points in Cartesian
+coordinates representing the center line of a road.
+Together with the road points extra information about its
+reframability is returned. A road is called reframable if its coordinates
+can be translated to fit it inside a given map size.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.roadgeometry.generate_road_with_reframability_check">
+<span class="sig-prename descclassname"><span class="pre">crag.roadgeometry.</span></span><span class="sig-name descname"><span class="pre">generate_road_with_reframability_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lengths_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappas_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_value_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_segment_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_segment_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_curvature_bound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lane_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.roadgeometry.generate_road_with_reframability_check" title="Link to this definition"></a></dt>
+<dd><p>Generate a random road using indices identifying parameter values.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.roadgeometry.is_likely_self_intersecting">
+<span class="sig-prename descclassname"><span class="pre">crag.roadgeometry.</span></span><span class="sig-name descname"><span class="pre">is_likely_self_intersecting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">road_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lane_width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.roadgeometry.is_likely_self_intersecting" title="Link to this definition"></a></dt>
+<dd><p>Verifies two of the self-intersection checks discussed in
+Castellano, Klikovits, Cetinkaya, Arcaini,
+‘FreneticV at the SBST 2022 tool competition’,
+SBST ‘22: Proceedings of the 15th Workshop on Search-Based
+Software Testing, pp. 47-48, 2022</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.roadgeometry.reframe_road">
+<span class="sig-prename descclassname"><span class="pre">crag.roadgeometry.</span></span><span class="sig-name descname"><span class="pre">reframe_road</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">road_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lane_width</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.roadgeometry.reframe_road" title="Link to this definition"></a></dt>
+<dd><p>Road reframing based on the idea from
+Castellano, Cetinkaya, Ho Thanh, Klikovits, Zhang, Arcaini,
+‘Frenetic at the SBST 2021 Tool Competition’,
+SBST ‘21: Proceedings of the 14th Workshop on Search-Based
+Software Testing, pp. 36-37, 2021</p>
+</dd></dl>
+
+</section>
+<section id="module-crag.tsgenerator">
+<span id="crag-tsgenerator-module"></span><h2>crag.tsgenerator module<a class="headerlink" href="#module-crag.tsgenerator" title="Link to this heading"></a></h2>
+<p>This module provides the abstract class TestSuiteGenerator
+that characterizes the use of backend tools. It is extended
+to accomodate specific needs of individual backends.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="crag.tsgenerator.TestSuiteGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">crag.tsgenerator.</span></span><span class="sig-name descname"><span class="pre">TestSuiteGenerator</span></span><a class="headerlink" href="#crag.tsgenerator.TestSuiteGenerator" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.tsgenerator.TestSuiteGenerator.call">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strength</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.tsgenerator.TestSuiteGenerator.call" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.tsgenerator.TestSuiteGenerator.call_with_seed">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">call_with_seed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_test_suite</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.tsgenerator.TestSuiteGenerator.call_with_seed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.tsgenerator.TestSuiteGenerator.generate_test_suite">
+<span class="sig-name descname"><span class="pre">generate_test_suite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_test_suite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.tsgenerator.TestSuiteGenerator.generate_test_suite" title="Link to this definition"></a></dt>
+<dd><p>Given strength and potentially a seed test suite, generate
+a new test suite by calling a backend tool.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.tsgenerator.TestSuiteGenerator.get_model_string">
+<span class="sig-name descname"><span class="pre">get_model_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">with_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.tsgenerator.TestSuiteGenerator.get_model_string" title="Link to this definition"></a></dt>
+<dd><p>This method creates the model string for road configuration pairs
+Length and Kappa by taking into account the number of road sections.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.tsgenerator.TestSuiteGenerator.get_seed_string">
+<span class="sig-name descname"><span class="pre">get_seed_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_test_suite</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.tsgenerator.TestSuiteGenerator.get_seed_string" title="Link to this definition"></a></dt>
+<dd><p>When seeds are passed to backends they need to be specified by using
+the Length and Kappa indices. This methods achieves it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="crag.tsgenerator.TestSuiteGenerator.set_model">
+<span class="sig-name descname"><span class="pre">set_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">road_section_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_value_count</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.tsgenerator.TestSuiteGenerator.set_model" title="Link to this definition"></a></dt>
+<dd><p>Sets the model for test suite generation based on
+the number of road sections in the configuration and the number
+of indices representing Length and Kappa.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-crag.utils">
+<span id="crag-utils-module"></span><h2>crag.utils module<a class="headerlink" href="#module-crag.utils" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.utils.call_command">
+<span class="sig-prename descclassname"><span class="pre">crag.utils.</span></span><span class="sig-name descname"><span class="pre">call_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.utils.call_command" title="Link to this definition"></a></dt>
+<dd><p>Calls a given shell command and returns the output string.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.utils.divide_and_sample">
+<span class="sig-prename descclassname"><span class="pre">crag.utils.</span></span><span class="sig-name descname"><span class="pre">divide_and_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.utils.divide_and_sample" title="Link to this definition"></a></dt>
+<dd><p>Divide the interval [min_value, max_value) to n smaller intervals
+and sample a uniformly distributed random number from the ith
+subinterval</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.utils.get_fullpath">
+<span class="sig-prename descclassname"><span class="pre">crag.utils.</span></span><span class="sig-name descname"><span class="pre">get_fullpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.utils.get_fullpath" title="Link to this definition"></a></dt>
+<dd><p>Given a filename with a local path, this method returns
+the global filepath of the file.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.utils.has_m_match">
+<span class="sig-prename descclassname"><span class="pre">crag.utils.</span></span><span class="sig-name descname"><span class="pre">has_m_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_arrays</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.utils.has_m_match" title="Link to this definition"></a></dt>
+<dd><p>Checks if array and any one of other_arrays have at least
+m number of same elements</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.utils.line_index">
+<span class="sig-prename descclassname"><span class="pre">crag.utils.</span></span><span class="sig-name descname"><span class="pre">line_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.utils.line_index" title="Link to this definition"></a></dt>
+<dd><p>Returns the index of line that starts with begin_str,
+if there is such a line. Otherwise returns -1.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.utils.take_best">
+<span class="sig-prename descclassname"><span class="pre">crag.utils.</span></span><span class="sig-name descname"><span class="pre">take_best</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">best_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.utils.take_best" title="Link to this definition"></a></dt>
+<dd><p>Given a list of numeric values lst, a function fun, and a size
+constant best_size, this function sorts the list of values lst based
+on the value that they generate when they are passed to the function fun.
+Then the top best_size of the sorted list is returned.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.utils.update_average">
+<span class="sig-prename descclassname"><span class="pre">crag.utils.</span></span><span class="sig-name descname"><span class="pre">update_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">average_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.utils.update_average" title="Link to this definition"></a></dt>
+<dd><p>This method provides a mechanism to aggregate fitness values
+(by averaging) for multiple roads generated with the same configuration.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.utils.update_first">
+<span class="sig-prename descclassname"><span class="pre">crag.utils.</span></span><span class="sig-name descname"><span class="pre">update_first</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.utils.update_first" title="Link to this definition"></a></dt>
+<dd><p>This method provides a mechanism to aggregate fitness values
+(by locking in the first value) for multiple roads generated with the same
+configuration.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="crag.utils.update_minimum">
+<span class="sig-prename descclassname"><span class="pre">crag.utils.</span></span><span class="sig-name descname"><span class="pre">update_minimum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minimum_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.utils.update_minimum" title="Link to this definition"></a></dt>
+<dd><p>This method provides a mechanism to aggregate fitness values
+(by taking minimum) for multiple roads generated with the same configuration.</p>
+</dd></dl>
+
+</section>
+<section id="module-crag">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-crag" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Paolo Arcaini, Ahmet Cetinkaya.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
