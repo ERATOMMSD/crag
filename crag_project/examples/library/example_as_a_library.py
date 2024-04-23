@@ -60,7 +60,7 @@ class CRAGExample:
         geometry_params["min_radius"] = 15
 
         def budget_availability_function():
-            return not self.executor.is_over():
+            return not self.executor.is_over()
 
 
         def evaluate_function(road):
