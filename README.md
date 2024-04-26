@@ -251,6 +251,34 @@ To start generating road geometries, we use the `generate` method.
 self.crag.generate()
 ~~~
 
+
+### Example for generating roads for evaluation in BeamNG simulator
+
+In `crag_project/roadsearch_examples` folder we provide complete code examples that can be used to generate roads and evaluate them using the
+[SBFT competition tool](https://github.com/sbft-cps-tool-competition/cps-tool-competition). This tool utilizes BeamNG simulator to check whether the lane-keeping system of an automated driving agend goes out of bounds in given road geometries.
+
+The `crag_project/roadsearch_examples` folder illustrate the use of `CRAG` through three different search methods: a default single road random sampling method, a repetition-based search, and a 1+1 evolutionary search.
+
+For the parameter values `bast_ratio=0.1`, `max_strength=4`, `road_section_count=5 (road_param_count=10)`, `param_value_count=4 (road_param_value_count=4)`, `min_road_scalar=0.6`, `max_road_scalar=2`, the following commands can be used on Windows to start the SBFT competition tool with a time budget of 10800 seconds (3 hours) in generating roads via `CRAG` and evaluating roads via BeamNG simulator. We note that [SBFT competition tool](https://github.com/sbft-cps-tool-competition/cps-tool-competition) is a dependency for these examples. After execution, this tool generates a list of log files for further analysis.
+
+#### Default method (roadsearch_default folder)
+
+``` sh
+echo --best_ratio 0.1 --max_strength 4 --road_param_count 10 --road_param_value_count 4 --max_road_scalar 2 --min_road_scalar 0.6 | python [PATH TO cps-tool-competition\competition.py] --time-budget 10800 --executor beamng --beamng-home "[PATH TO THE BEAMNG FOLDER BeamNG.tech.v0.26.2.0]" --beamng-user "[PATH TO THE BEAMNG.DRIVE FOLDER Local\BeamNG.drive\0.26]" --map-size 200 --module-path "[PATH TO THE FOLDER roadsearch_examples]" --module-name roadsearch_default.cragdefault --class-name CRAGExample`
+```
+
+#### Repetition-based search method (roadsearch_repetition folder)
+
+``` sh
+echo --best_ratio 0.1 --max_strength 4 --road_param_count 10 --road_param_value_count 4 --max_road_scalar 2 --min_road_scalar 0.6 | python [PATH TO cps-tool-competition\competition.py] --time-budget 10800 --executor beamng --beamng-home "[PATH TO THE BEAMNG FOLDER BeamNG.tech.v0.26.2.0]" --beamng-user "[PATH TO THE BEAMNG.DRIVE FOLDER Local\BeamNG.drive\0.26]" --map-size 200 --module-path "[PATH TO THE FOLDER roadsearch_examples]" --module-name roadsearch_repetition.cragrepetition --class-name CRAGExample
+```
+
+#### 1 + 1 Evolutionary approach in search (roadsearch_1p1 folder)
+
+``` sh
+echo --best_ratio 0.1 --max_strength 4 --road_param_count 10 --road_param_value_count 4 --max_road_scalar 2 --min_road_scalar 0.6 | python [PATH TO cps-tool-competition\competition.py] --time-budget 10800 --executor beamng --beamng-home "[PATH TO THE BEAMNG FOLDER BeamNG.tech.v0.26.2.0]" --beamng-user "[PATH TO THE BEAMNG.DRIVE FOLDER Local\BeamNG.drive\0.26]" --map-size 200 --module-path "[PATH TO THE FOLDER roadsearch_examples]" --module-name roadsearch_1p1.crag1p1 --class-name CRAGExample
+```
+
 ## API Documentation
 
 We provide an API documentation to help those who want to use CRAG as a library. The documentation can be found in html format in the `docs` folder.
