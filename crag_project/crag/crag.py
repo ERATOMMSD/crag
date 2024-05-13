@@ -15,7 +15,7 @@ class CRAG:
         self.use_seed = core_params["use_seed"] # True/False
         self.seed_best = core_params["seed_best"] # True/False (Seed whole if False)
         self.best_ratio = core_params["best_ratio"] # [0,1]
-        self.rerun = core_params["rerun"] # True/False
+        self.resample = core_params["resample"] # True/False
         self.fitness_aggregation_method = core_params["fitness_aggregation_method"]
         self.max_strength = core_params["max_strength"]
 
@@ -141,9 +141,9 @@ class CRAG:
                 # Evaluate
                 evaluations = []
                 for (test, road) in zip(test_suite, roads):
-                    if (not self.rerun) and self.use_seed and (tuple(test) in evaluation_dict):
+                    if (not self.resample) and self.use_seed and (tuple(test) in evaluation_dict):
                         evaluation = evaluation_dict[tuple(test)]
-                    else:
+                    else: # if resample is true, then road is evaluated
                         evaluation = self.evaluate_function(road)
                     if not self.budget_availability_function():
                         budget_over = True
@@ -164,7 +164,7 @@ if __name__ == "__main__":
     core_params["use_seed"] = True
     core_params["seed_best"] = True
     core_params["best_ratio"] = True
-    core_params["rerun"] = True
+    core_params["resample"] = True
     core_params["fitness_aggregation_method"] = "minimum"
     core_params["max_strength"] = 5
 

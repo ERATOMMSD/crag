@@ -46,7 +46,7 @@ class CRAGExample:
         core_params["use_seed"] = True
         core_params["seed_best"] = True
         core_params["best_ratio"] = True
-        core_params["rerun"] = True
+        core_params["resample"] = True
         core_params["fitness_aggregation_method"] = "minimum"
         core_params["max_strength"] = 5
 
@@ -60,7 +60,7 @@ class CRAGExample:
         geometry_params["min_radius"] = 15
 
         def budget_availability_function():
-            return not self.executor.is_over():
+            return not self.executor.is_over()
 
 
         def evaluate_function(road):

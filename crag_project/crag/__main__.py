@@ -17,8 +17,8 @@ def setup_parser():
                         help="When preparing seeds take only the best tests.")
     parser.add_argument("--best-ratio", type=float, default=0.1,
                         help="Percentage of top scoring tests taken as seed.")
-    parser.add_argument("--rerun", type=bool, default=True,
-                        help="Run (or not) the test (for evaluation) even if it was run before.")
+    parser.add_argument("--resample", type=bool, default=True,
+                        help="Whether to resample and run the test (for evaluation) even if it was evaluated before.")
     parser.add_argument("--fitness-aggregation-method", choices=['minimum', 'average', 'first'], default='average',
                         help="When a test is rerun for evaluation, how to aggregate available fitness values.")
     parser.add_argument("--max-strength", type=int, default=5,

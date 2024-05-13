@@ -11,7 +11,7 @@ core_params = {}
 core_params["use_seed"] = True
 core_params["seed_best"] = True
 core_params["best_ratio"] = True
-core_params["rerun"] = True
+core_params["resample"] = True
 core_params["fitness_aggregation_method"] = "minimum"
 core_params["max_strength"] = 5
 
