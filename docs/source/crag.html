@@ -116,7 +116,7 @@
 <li><a class="reference internal" href="#crag.utils.line_index"><code class="docutils literal notranslate"><span class="pre">line_index()</span></code></a></li>
 <li><a class="reference internal" href="#crag.utils.take_best"><code class="docutils literal notranslate"><span class="pre">take_best()</span></code></a></li>
 <li><a class="reference internal" href="#crag.utils.update_average"><code class="docutils literal notranslate"><span class="pre">update_average()</span></code></a></li>
-<li><a class="reference internal" href="#crag.utils.update_first"><code class="docutils literal notranslate"><span class="pre">update_first()</span></code></a></li>
+<li><a class="reference internal" href="#crag.utils.update_maximum"><code class="docutils literal notranslate"><span class="pre">update_maximum()</span></code></a></li>
 <li><a class="reference internal" href="#crag.utils.update_minimum"><code class="docutils literal notranslate"><span class="pre">update_minimum()</span></code></a></li>
 </ul>
 </li>
@@ -486,11 +486,10 @@ Then the top best_size of the sorted list is returned.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="crag.utils.update_first">
-<span class="sig-prename descclassname"><span class="pre">crag.utils.</span></span><span class="sig-name descname"><span class="pre">update_first</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.utils.update_first" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="crag.utils.update_maximum">
+<span class="sig-prename descclassname"><span class="pre">crag.utils.</span></span><span class="sig-name descname"><span class="pre">update_maximum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maximum_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#crag.utils.update_maximum" title="Link to this definition"></a></dt>
 <dd><p>This method provides a mechanism to aggregate fitness values
-(by locking in the first value) for multiple roads generated with the same
-configuration.</p>
+(by taking maximum) for multiple roads generated with the same configuration.</p>
 </dd></dl>
 
 <dl class="py function">

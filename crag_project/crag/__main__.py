@@ -18,8 +18,8 @@ def setup_parser():
     parser.add_argument("--best-ratio", type=float, default=0.1,
                         help="Percentage of top scoring tests taken as seed.")
     parser.add_argument("--resample", type=bool, default=True,
-                        help="Whether to resample and run the test (for evaluation) even if it was evaluated before.")
-    parser.add_argument("--fitness-aggregation-method", choices=['minimum', 'average', 'first'], default='average',
+                        help="Given a road configuration, resample a road geometry and evaluate it even if an evelation was done before.")
+    parser.add_argument("--fitness-aggregation-method", choices=['minimum', 'average', 'maximum'], default='average',
                         help="When a test is rerun for evaluation, how to aggregate available fitness values.")
     parser.add_argument("--max-strength", type=int, default=5,
                         help="Maximum strength for combinatorial test generation.")
@@ -98,7 +98,7 @@ def main():
     args = parser.parse_args()
 
     core_params = {"use_seed": args.use_seed, "seed_best": args.seed_best, "best_ratio": args.best_ratio,
-                   "rerun": args.rerun, "fitness_aggregation_method": args.fitness_aggregation_method,
+                   "resample": args.resample, "fitness_aggregation_method": args.fitness_aggregation_method,
                    "max_strength": args.max_strength}
 
     geometry_params = {"road_section_count": args.road_section_count, "param_value_count": args.param_value_count,

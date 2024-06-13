@@ -5,7 +5,7 @@
 # Requirements
 
 CRAG requires
-  - `python` for installation and standard operation,
+  - `python` (with version >=3.8, <3.12) for installation and standard operation,
   - either one of `pict`, `ACTS`, or `CAgen` as a backend for combinatorial test suite generation.
 
 ## Links of backend tools
@@ -19,7 +19,7 @@ Linux, macOS, and Windows versions of the tool `pict` are provided in `external_
 
 # Installation
 
-We recommend the use of [`venv`](https://docs.python.org/3/library/venv.html) of Python for installation and use. 
+Please use Python with version greater than or equal to 3.8 and strictly smaller than 3.12. In addition, we recommend the use of [`venv`](https://docs.python.org/3/library/venv.html) of Python for installation and use.
 
  - First install the `venv` module in Python, if it’s not already installed on your system.
 
@@ -124,8 +124,8 @@ The standalone executable `crag` accepts several command line arguments for cust
 - `--use-seed`: type=bool, default=True, (Use generated tests of previous strength as seeds or not.)
 - `--seed-best`: type=bool, default=True, (When preparing seeds take only the best tests.)
 - `--best-ratio`: type=float, default=0.1, (Percentage of top scoring tests taken as seed.)
-- `--rerun`: type=bool, default=True, (Run (or not) the test (for evaluation) even if it was run before.)
-- `--fitness-aggregation-method`: choices=['minimum', 'average', 'first'], default='average', (When a test is rerun for evaluation, how to aggregate available fitness values.)
+- `--resample`: type=bool, default=True, (Given a road configuration, resample a road geometry and evaluate it even if an evelation was done before.)
+- `--fitness-aggregation-method`: choices=['minimum', 'average', 'maximum'], default='average', (When a test is rerun for evaluation, how to aggregate available fitness values.)
 - `--max-strength`: type=int, default=5, (Maximum strength for combinatorial test generation.)
 
 #### ROAD GEOMETRY arguments
@@ -170,7 +170,7 @@ core_params = {}
 core_params["use_seed"] = True
 core_params["seed_best"] = True
 core_params["best_ratio"] = True
-core_params["rerun"] = True
+core_params["resample"] = True
 core_params["fitness_aggregation_method"] = "minimum"
 core_params["max_strength"] = 5
 

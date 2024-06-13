@@ -74,15 +74,17 @@ def update_minimum(minimum_dict, key_list, new_value):
         return new_value
 
 
-def update_first(first_dict, key_list, new_value):
+def update_maximum(maximum_dict, key_list, new_value):
     """This method provides a mechanism to aggregate fitness values
-    (by locking in the first value) for multiple roads generated with the same
-    configuration."""
+    (by taking maximum) for multiple roads generated with the same configuration."""
     key_tuple = tuple(key_list)
-    if key_tuple in first_dict:
-        return first_dict[key_tuple][0]
+    if key_tuple in maximum_dict:
+        old_maximum, n = maximum_dict[key_tuple]
+        new_maximum = min([old_maximum, new_value])
+        maximum_dict[key_tuple] = (new_maximum, n + 1)
+        return new_maximum
     else:
-        first_dict[key_tuple] = (new_value, 1)
+        maximum_dict[key_tuple] = (new_value, 1)
         return new_value
 
 

@@ -89,12 +89,12 @@ class CRAG:
     def best_tuples(self, test_suite, evaluations):
         fitness_values = []
         for index, test in enumerate(test_suite):
-            if self.fitness_aggregation_method == "average":
-                utils.update_average(self.fitness_dictionary, test, evaluations[index][0])
-            elif self.fitness_aggregation_method == "minimum":
+            if self.fitness_aggregation_method == "minimum":
                 utils.update_minimum(self.fitness_dictionary, test, evaluations[index][0])
-            else: # In other words: self.fitness_aggregation_method == "first"
-                utils.update_first(self.fitness_dictionary, test, evaluations[index][0])
+            elif self.fitness_aggregation_method == "maximum":
+                utils.update_maximum(self.fitness_dictionary, test, evaluations[index][0])
+            else: # if self.fitness_aggregation_method == "average":
+                utils.update_average(self.fitness_dictionary, test, evaluations[index][0])
             fitness_values.append(self.fitness_dictionary[tuple(test)])
 
         if self.seed_best:
@@ -165,7 +165,7 @@ if __name__ == "__main__":
     core_params["seed_best"] = True
     core_params["best_ratio"] = True
     core_params["resample"] = True
-    core_params["fitness_aggregation_method"] = "minimum"
+    core_params["fitness_aggregation_method"] = "average"
     core_params["max_strength"] = 5
 
     geometry_params = {}
